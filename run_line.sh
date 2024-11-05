@@ -32,10 +32,10 @@ apt-get install cuda-11-7
 
 
 git clone https://github.com/nss2024/linevul_deepdfa.git
-rsync -av DDFA/ DeepDFA/DDFA/
-rsync -av LineVul/ DeepDFA/LineVul/
+rsync -av linevul_deepdfa/DDFA/ DeepDFA/DDFA/
+rsync -av linevul_deepdfa/LineVul/ DeepDFA/LineVul/
 
-
+rm -rf linevul_deepdfa/
 echo "청소중.."
 rm -rf DDFA/
 rm -rf LineVul/
