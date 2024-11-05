@@ -30,7 +30,7 @@ apt-get install cuda-11-7
 
 
 
-
+## 이 부분은 안 덮어 씌워질 수 있음 (확인필요)
 git clone https://github.com/nss2024/linevul_deepdfa.git
 rsync -av linevul_deepdfa/DDFA/ DeepDFA/DDFA/
 rsync -av linevul_deepdfa/LineVul/ DeepDFA/LineVul/
@@ -55,3 +55,18 @@ pip install -U 'jsonargparse[signatures]'
 # 훈련
 #cd /content/DeepDFA/LineVul/linevul/
 #bash scripts/msr_train_combined.sh 1 MSR
+
+
+
+# 데이터셋 학습시키는 코드
+# 다운로드 (test val train 은 google drive 에 mnt 되어 있다고 판단)
+#curl -Lo preprocessed_data.zip 'https://figshare.com/ndownloader/files/43991910'
+#unzip preprocessed_data.zip
+#rm preprocessed_data.zip
+#rsync -av DDFA/ DeepDFA/DDFA/
+#rm -rf DDFA
+#curl -Lo MSR_data_cleaned.zip 'https://figshare.com/ndownloader/files/43990908'
+#unzip MSR_data_cleaned.zip
+#rm MSR_data_cleaned.zip
+#mv MSR_data_cleaned.csv DeepDFA/DDFA/storage/external
+#rm MSR_data_cleaned.csv
