@@ -672,8 +672,8 @@ def main():
         model.to(args.device)
         test_dataset = TextDataset(tokenizer, args, file_type='test', return_index=True)
         test(args, model, tokenizer, test_dataset, flowgnn_dataset, output_dir, best_threshold=0.5)
-
+    torch.save(model.state_dict(), "dfalinevul.pt")
 if __name__ == "__main__":
     main()
-    torch.save(model.state_dict(), "dfalinevul.pt")
+    
 
